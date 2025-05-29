@@ -1,8 +1,11 @@
 import express from "express"
 
-function sum(a: number, b: number): number {
-  return a + b
-}
+const PORT = 3333
 
-const result: number = sum(5, 3)
-console.log("Resultado da soma", result)
+const app = express()
+
+app.get('/x', (request, response) => {
+  response.send("Hello word!")
+})
+
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}`))
